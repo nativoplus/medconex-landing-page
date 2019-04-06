@@ -1,5 +1,5 @@
 <?php
-$ToEmail = 'demo1@gmail.com';
+$ToEmail = 'support@nativoplus.studio';
 $EmailSubject = 'User Contact Information';
 	$mailheader = "From: ".$_POST["email"]."\r\n";
 		$mailheader .= "Reply-To: ".$_POST["email"]."\r\n";

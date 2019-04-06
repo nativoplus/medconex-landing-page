@@ -333,6 +333,7 @@ $(document).ready(function() {
     Contact From
     --------------------------*/
     $('#contactform').submit(function(e) {
+        grecaptcha.reset()
         var flag = 0;
         e.preventDefault(); // Prevent Default Submission
         $('.require').each(function() {
@@ -356,7 +357,7 @@ $(document).ready(function() {
 
         if (flag == 0) {
             $.ajax({
-                    url: 'php/contact-form.php',
+                    url: 'server\php\contact-form.php',
                     type: 'POST',
                     data: $("#contactform").serialize() // it will serialize the form data
                 })
