@@ -467,18 +467,20 @@
         <div class="col-sm-12">
 
           <div id="sendgrid-subscription-widget" class="sendgrid-subscription-widget" data-emailerror="Please enter a valid email address">
-            <form id="sg-widget" class="form-inline" data-token="386861fc73d055b997659cec39eb43d2" onsubmit="return false;">
+            <form id="sg-widget" class="form-inline" [attr.data-token]="SWidgetToken" onsubmit="return false;">
               <div class="sg-response" id="sg-response">
               </div>
               <div class="form-group">
-                <input id="sg_email" type="email" class="form-control" name="sg_email" placeholder="you@example.com" required="required">
+                <input id="sg_email" 
+                type="email" 
+                class="form-control"
+                 name="sg_email" 
+                 placeholder="you@example.com" 
+                 required="required">
               </div>
               <input class="button bt-white iq-ml-25" type="submit" id="sg-submit-btn" value="Subscribe">
             </form>
           </div>
-          <!--                    <div class="newsletter-phone iq-mt-50 wow fadeInUp" data-wow-duration="1s">-->
-          <!--                        <img class="img-responsive center-block" src="assets/images/02.png" alt="#">-->
-          <!--                    </div>-->
         </div>
       </div>
     </div>

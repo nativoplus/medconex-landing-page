@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  SGWidgetDataTokenForSubscription: '386861fc73d055b997659cec39eb43d2',
+  api: {
+    contactUsApi: 'http://localhost:53579/api/v1/Email/send_email'
+  }
 };
 
 /*

@@ -11,13 +11,13 @@
 .sendgrid-subscription-widget .response {
     display: none; 
     font-family: sans-serif; 
-    font-size: .8em;
 } 
 .sendgrid-subscription-widget .success {
-     color: green;
+    margin-left: -15%;
+    color: #bdffbd;
 } 
 .sendgrid-subscription-widget .error {
-    margin-left: -33%;
+    margin-left: -15%;
 }
 .sendgrid-subscription-widget .error, .sendgrid-subscription-widget .sg-consent-text a { 
     color: #f00; 
