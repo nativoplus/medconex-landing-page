@@ -710,9 +710,19 @@ header.affix .navbar-nav { margin-top: 6px; }
 -----------------------------------------------------------------------*/
 .iq-get-in { position: relative; margin-top: -12%; -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1); box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1); }
 .contact-form .section-field { position: relative; width: 100%; float: left; }
-.contact-form .section-field input { position: relative; width: 100%; margin-bottom: 20px; border-radius: 90px; padding-left: 20px; height: 48px; line-height: 48px; clear: both; color: #b6b6b6; border: 1px solid #e1e1e1; }
+.contact-form .section-field input { position: relative; width: 100%; margin-bottom: 20px; margin-top: 10px;
+    border-radius: 90px; padding-left: 20px; height: 48px; line-height: 48px; clear: both; color: #b6b6b6; border: 1px solid #e1e1e1; }
 .contact-form .section-field input:focus, .contact-form .section-field.textarea textarea:focus { border: 1px solid #1e50e2; box-shadow: none; outline: none; }
-.contact-form .section-field.textarea textarea { width: 100%; float: left; color: #b6b6b6; border: 1px solid #e1e1e1; border-radius: 20px; padding: 15px 0 0 20px; resize: none; }
+.contact-form .section-field.textarea textarea {
+     width: 100%; 
+     float: left; 
+     color: #b6b6b6; 
+     border: 1px solid #e1e1e1; 
+     border-radius: 20px; 
+     padding: 15px 0 0 20px; 
+     resize: none;
+     margin-top: 10px;
+}
 #formmessage { display: none; }
 
 /*---------------------------------------------------------------------
@@ -848,3 +858,8 @@ header.affix .navbar-nav { margin-top: 6px; }
 #countdown li span { font-size: 50px; font-weight: 800; line-height: 80px; margin: 0 30px; }
 #countdown li.seperator { font-size: 50px; line-height: 40px; vertical-align: top; margin-top: 15px; }
 #countdown li p { color: #a7abb1; font-size: 20px; }
+
+.invalid {
+    color: #f00;
+    margin-left: 20px;
+}

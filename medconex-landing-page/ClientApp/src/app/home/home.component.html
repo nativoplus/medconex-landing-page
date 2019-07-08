@@ -554,22 +554,31 @@
             </div>
             <div class="row">
               <div id="formmessage">Success/Error Message Goes Here</div>
-              <form class="form-horizontal" id="contactform" method="post" action="../php/contact-form.php">
+              <form class="form-horizontal" id="contactform"  [formGroup]="contactUsForm" (ngSubmit)="onContactUsFormSubmit()">
                 <div class="contact-form">
                   <div class="col-sm-6">
                     <div class="section-field">
-                      <input id="name" type="text" placeholder="Name*" name="name">
+                      <span class="invalid" *ngIf="contactUsForm.controls.Name.touched && contactUsForm.controls.Name.errors.required">
+                          *Please enter your name.
+                        </span>
+                      <input id="name" type="text" placeholder="Name*" name="name" formControlName="Name">
                     </div>
                     <div class="section-field">
-                      <input type="email" placeholder="Email*" name="email">
+                        <span class="invalid" *ngIf="contactUsForm.controls.Email.touched && !contactUsForm.controls.Email.valid">
+                            *Please enter a valid email.
+                          </span>
+                      <input type="email" placeholder="Email*" name="email" formControlName="Email">
                     </div>
-                    <div class="section-field">
-                      <input type="text" placeholder="Phone*" name="phone">
-                    </div>
+                    <!-- <div class="section-field">
+                        <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+                    </div> -->
                   </div>
                   <div class="col-sm-6">
                     <div class="section-field textarea">
-                      <textarea class="input-message" placeholder="Comment*" rows="7" name="message"></textarea>
+                      <span class="invalid" *ngIf="contactUsForm.controls.Message.touched && contactUsForm.controls.Message.errors.required">
+                          *Please type something in the comment box.
+                        </span>
+                      <textarea class="input-message" placeholder="Comment*" rows="7" name="message" formControlName="Message"></textarea>
                     </div>
                     <input type="hidden" name="action" value="sendEmail" />
                     <button id="submit" name="submit" type="submit" value="Send" class="button pull-right iq-mt-40">Send Message</button>
