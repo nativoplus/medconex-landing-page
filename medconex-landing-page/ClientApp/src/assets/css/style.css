@@ -863,3 +863,9 @@ header.affix .navbar-nav { margin-top: 6px; }
     color: #f00;
     margin-left: 20px;
 }
+
+
+.rc-anchor-light.rc-anchor-normal {
+    border: none !important;
+    margin-left: 5px;
+}

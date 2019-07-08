@@ -28,7 +28,8 @@ export class HomeComponent implements OnInit {
           Validators.required,
           Validators.email] ],
         Name: ['',  Validators.required],
-        Message: ['',  Validators.required]
+        Message: ['',  Validators.required],
+        myRecaptcha: ['',  Validators.required]
     });
 
 
@@ -37,7 +38,7 @@ export class HomeComponent implements OnInit {
 
   onContactUsFormSubmit() {
 
-    if( !this.contactUsForm.valid) {
+    if( !this.contactUsForm.valid && !this.contactUsForm.controls.myRecaptcha.value) {
       return;
     }
 
@@ -118,6 +119,14 @@ export class HomeComponent implements OnInit {
       </td>
     </tr>
     </table>`;
+  }
+
+  onScriptLoad() {
+    console.log('Google reCAPTCHA loaded and is ready for use');
+  }
+
+  onScriptError() {
+    console.log('Something went long when loading the Google reCAPTCHA');
   }
 
 }

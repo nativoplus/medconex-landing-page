@@ -569,9 +569,16 @@
                           </span>
                       <input type="email" placeholder="Email*" name="email" formControlName="Email">
                     </div>
-                    <!-- <div class="section-field">
-                        <div class="g-recaptcha" data-sitekey="your_site_key"></div>
-                    </div> -->
+                    <div class="section-field">
+                        <div class="text-xs-center  m-b-md " id="contactus">
+                            <recaptcha formControlName="myRecaptcha"
+                                       name="myRecaptcha"
+                                       class="g-recaptcha"
+                                       (scriptLoad)="onScriptLoad()"
+                                       (scriptError)="onScriptError()">
+                            </recaptcha>
+                          </div>
+                    </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="section-field textarea">

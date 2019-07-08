@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   SGWidgetDataTokenForSubscription: '386861fc73d055b997659cec39eb43d2',
+  reCaptchaKey: '6LdawKcUAAAAAGHQ43OqZ92sWbJcsa34c7TeZD9K',
   api: {
     contactUsApi: 'http://localhost:53579/api/v1/Email/send_email'
   },
