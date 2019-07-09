@@ -5,9 +5,10 @@
 export const environment = {
   production: false,
   SGWidgetDataTokenForSubscription: '386861fc73d055b997659cec39eb43d2',
+  contactUsSendgridTemplateId : 'd-bfa29044f7754659a2dbd5d6e3877819',
   reCaptchaKey: '6LdawKcUAAAAAGHQ43OqZ92sWbJcsa34c7TeZD9K',
   api: {
-    contactUsApi: 'http://localhost:53579/api/v1/Email/send_email'
+    contactUsApi: 'http://localhost:53579/api/v1/Email/send_email_template'
   },
   contactUs: {
     senderEmail: 'angelmartinez.la@gmail.com',

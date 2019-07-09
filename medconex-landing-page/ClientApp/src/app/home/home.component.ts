@@ -40,85 +40,56 @@ export class HomeComponent implements OnInit {
 
     if( !this.contactUsForm.valid && !this.contactUsForm.controls.myRecaptcha.value) {
       return;
-    }
+    } else {
 
-    const formValues =  {
-      email: this.contactUsForm.value.Email,
-      name: this.contactUsForm.value.Name,
-      message: this.contactUsForm.value.Message
-    };
-
-    const contactUsText = this.produceContactMessage();
-    const requestBody = {
-      to: [
-        environment.contactUs.senderEmail
-      ],
-      cc: environment.contactUs.ccList ?  environment.contactUs.ccList : [],
-      subject: 'User Contact Information',
-      html: contactUsText,
-      senderEmail: formValues.email,
-      senderName: formValues.name,
-      text: contactUsText
-    };
-
-    this.http.post<any[]>( this.contactUsApi, requestBody).subscribe(result => {
-      this.contactUsForm.reset();
-
-      //We display a alert to let the user now what going on
-      Swal.fire({
-        title: 'Thanks for contacting us',
-        html: 'We will get back to you as soon as possible',
-        type: 'success',
-        timer: 2000,
-        onBeforeOpen: () => {
-          Swal.showLoading();
-        },
+      const formValues =  {
+        email: this.contactUsForm.value.Email,
+        name: this.contactUsForm.value.Name,
+        message: this.contactUsForm.value.Message
+      };
+      const requestBody = {
+        templateId: environment.contactUsSendgridTemplateId,
+        emailTemplateData: [
+          {
+            templateData: {
+              name: formValues.name,
+              email: formValues.email,
+              message: formValues.message
+            },
+            to: formValues.email,
+            cc: environment.contactUs.ccList,
+          }
+        ],
+        senderName: formValues.name,
+        subject: 'Contact User Information',
+        senderEmail: formValues.email
+      };
+  
+      this.http.post<any[]>( this.contactUsApi, requestBody).subscribe(result => {
+        this.contactUsForm.reset();
+  
+        //We display a alert to let the user now what going on
+        Swal.fire({
+          title: 'Thanks for contacting us',
+          html: 'We will get back to you as soon as possible',
+          type: 'success',
+          timer: 2000,
+          onBeforeOpen: () => {
+            Swal.showLoading();
+          },
+        });
+      }, error =>  {
+        //We display a alert to let the user now what going on
+        Swal.fire({
+          title: 'There was an error trying to send your message to our support team',
+          html: 'Please try again later or you can contact us via email',
+          type: 'error',
+          timer: 2000,
+          showConfirmButton: true
+        });
       });
-    }, error => console.error(error));
-  }
 
-  produceContactMessage = (): string => {
-   const formValues =  {
-     email: this.contactUsForm.value.Email,
-     name: this.contactUsForm.value.Name,
-     message: this.contactUsForm.value.Message
-   };
-
-   return `<table style=" background:#F4F4F4 ; text-align : center">
-    <tr>
-      <th colspan="2" style="padding:10px;">
-        <b>Contact Details</b>
-      </th>
-    </tr>
-    <tr>
-      <td style="padding:10px;">
-        <b>Name:</b>
-      </td>
-      <td style="padding:10px;">${formValues.name}</td>
-    </tr>
-    <tr>
-      <td style="padding:10px;">
-        <b>E-mail:</b>
-      </td>
-      <td style="padding:10px;">${formValues.email}</td>
-    </tr>
-    <tr>
-      <td style="padding:10px;">
-        <b>Message:</b>
-      </td>
-      <td style="padding:10px;">${formValues.message}</td>
-    </tr>
-    <tr>
-      <th colspan="2" style="padding:10px;">
-        <b>Thank you for contacting us.</b>
-      </th>
-    </tr>
-    <tr>
-      <td colspan="2" style="padding:10px;">
-        You are very important to us, all information received will always remain confidential.
-      </td>
-    </tr>
-    </table>`;
+    }
   }
 
   onScriptLoad() {

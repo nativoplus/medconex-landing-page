@@ -558,7 +558,7 @@
                 <div class="contact-form">
                   <div class="col-sm-6">
                     <div class="section-field">
-                      <span class="invalid" *ngIf="contactUsForm.controls.Name.touched && contactUsForm.controls.Name.errors.required">
+                      <span class="invalid" *ngIf="contactUsForm.controls.Name.touched && contactUsForm.controls.Name.errors?.required">
                           *Please enter your name.
                         </span>
                       <input id="name" type="text" placeholder="Name*" name="name" formControlName="Name">
