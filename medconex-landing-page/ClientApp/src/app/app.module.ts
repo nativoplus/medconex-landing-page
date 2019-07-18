@@ -34,8 +34,8 @@ import { LoginModule } from './login/login.module';
       siteKey: environment.reCaptchaKey
     }),
     KinveyModule.init({
-      appKey: 'kid_ryZl8bRDm',
-      appSecret: "1c6e98663ec6493ab8cdd06e09b27714"
+      appKey: environment.kinveyAppKey,
+      appSecret: environment.kinveyAppSecret
     })
   ],
   providers: [
