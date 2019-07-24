@@ -12,8 +12,9 @@ export const environment = {
   kinveyAppSecret: '1c6e98663ec6493ab8cdd06e09b27714',
   kinveyMasterSecret: '316e4a553d4c426db93a52c29ffc1905',
   api: {
-    contactUsApi: 'http://localhost:53579/api/v1/Email/send_email_template',
-    kinveyAdminMembersApi: 'https://baas.kinvey.com/roles/kid_ryZl8bRDm/b7e0849f-d2d5-483d-85cd-d33a7d9d018d/membership'
+    contactUsApi: 'https://nativoplusemailapi.azurewebsites.net/api/v1.0/Email/send_email_template',
+    kinveyAdminMembersApi: 'https://baas.kinvey.com/roles/kid_ryZl8bRDm/b7e0849f-d2d5-483d-85cd-d33a7d9d018d/membership',
+    getActiveUsersApi: 'https://mobilehmmapi.azurewebsites.net/api/v1.0/users/getactiveusers'
   },
   contactUs: {
     senderEmail: 'angelmartinez.la@gmail.com',

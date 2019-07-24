@@ -5,6 +5,7 @@ import { UserService } from 'kinvey-angular-sdk';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { KinveyRoleMember } from '../models/KinveyRoleMember';
+import { GetActiveUsersResponse } from '../models/GetActiveUsersResponse';
 
 @Injectable()
 export class AuthService {
@@ -33,6 +34,14 @@ export class AuthService {
     };
 
     return this._http.get<KinveyRoleMember[]>(environment.api.kinveyAdminMembersApi, httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      ).toPromise();
+  }
+
+  getActiveUsers() {
+    return this._http.get<GetActiveUsersResponse>(environment.api.getActiveUsersApi)
       .pipe(
         retry(2),
         catchError(this.handleError)

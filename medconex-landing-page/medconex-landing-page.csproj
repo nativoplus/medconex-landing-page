@@ -11,6 +11,7 @@
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
     <RootNamespace>medconex_landing_page</RootNamespace>
+    <UserSecretsId>6ad0dc8d-aa13-4a52-a41d-ce07849ab724</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +28,7 @@
     <None Remove="ClientApp\src\app\login\login-page\login-page.component.ts" />
     <None Remove="ClientApp\src\app\login\login-routing.module.ts" />
     <None Remove="ClientApp\src\app\login\login.module.ts" />
+    <None Remove="ClientApp\src\app\login\models\GetActiveUsersResponse.ts" />
     <None Remove="ClientApp\src\app\login\models\KinveyRoleMember.ts" />
     <None Remove="ClientApp\src\app\login\services\auth-guard.service.ts" />
     <None Remove="ClientApp\src\app\login\services\auth.service.ts" />
@@ -61,6 +63,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\login\login.module.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\login\models\GetActiveUsersResponse.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\login\models\KinveyRoleMember.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

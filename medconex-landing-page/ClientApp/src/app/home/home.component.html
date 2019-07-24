@@ -21,11 +21,11 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right" id="top-menu">
               <li class="active"><a href="#iq-home">Home</a></li>
-              <li><a href="#about-us">About Us</a></li>
+              <li><a href="#about-us">About us</a></li>
               <li><a href="#features">Features</a></li>
               <li><a href="#screenshots">Screenshots</a></li>
-              <li><a href="#contact-us">Contact Us</a></li>
-              <li><a routerLink="/admin-dashboard" routerLinkActive="active">Admin Dashboard</a></li>
+              <li><a href="#contact-us">Contact us</a></li>
+              <li><a routerLink="/admin-dashboard" routerLinkActive="active">Admin dashboard</a></li>
             </ul>
           </div>
           <!-- /.navbar-collapse -->
@@ -55,7 +55,7 @@
             <div class="row">
               <div class="col-sm-8 col-lg-8 col-md-8">
                 <h1 class="iq-font-white iq-tw-8" data-animation="animated fadeInLeft">
-                  <small class="iq-font-white iq-tw-5"> <strong class="iq-font-white">&#9679;</strong>  Revolutionizing patient care. </small> MEDCONEX MOBILE APP
+                  <small class="iq-font-white iq-tw-5">Revolutionizing patient care.</small> MEDCONEX MOBILE APP
                 </h1>
 
               </div>
@@ -77,7 +77,7 @@
                 </div>
               </div>
               <div class="col-sm-8 col-lg-8 col-md-8">
-                <h1 class="iq-font-white iq-tw-8" data-animation="animated fadeInRight"><small class="iq-font-white iq-tw-5"><b class="iq-font-white">&#9679;</b> Smooth and seamless communication among physicians, pharmacies, insurers, and patients.</small>HOLISTIC APPROACH</h1>
+                <h1 class="iq-font-white iq-tw-8" data-animation="animated fadeInRight"><small class="iq-font-white iq-tw-5">Smooth and seamless communication among physicians, pharmacies, insurers, and patients.</small>HOLISTIC APPROACH</h1>
 
               </div>
             </div>
@@ -88,7 +88,7 @@
           <div class="banner-text">
             <div class="row">
               <div class="col-sm-8 col-lg-8 col-md-8">
-                <h1 class="iq-font-white iq-tw-8" data-animation="animated bounceInLeft"><small class="iq-font-white iq-tw-5"><b class="iq-font-white">&#9679;</b>Designed to not only pass along information but also as a holding place for good thoughts, encouragement as well as medical and caregiving updates. </small>CONNECT WITH YOUR LOVED ONES</h1>
+                <h1 class="iq-font-white iq-tw-8" data-animation="animated bounceInLeft"><small class="iq-font-white iq-tw-5">Designed to not only pass along information but also as a holding place for good thoughts, encouragement as well as medical and caregiving updates.</small>CONNECT WITH YOUR LOVED ONES</h1>
                 <div class="link">
 
                 </div>
@@ -583,7 +583,7 @@
                   </div>
                   <div class="col-sm-6">
                     <div class="section-field textarea">
-                      <span class="invalid" *ngIf="contactUsForm.controls.Message.touched && contactUsForm.controls.Message.errors.required">
+                      <span class="invalid" *ngIf="contactUsForm.controls.Message.touched && contactUsForm.controls.Message.errors?.required">
                           *Please type something in the comment box.
                         </span>
                       <textarea class="input-message" placeholder="Comment*" rows="7" name="message" formControlName="Message"></textarea>

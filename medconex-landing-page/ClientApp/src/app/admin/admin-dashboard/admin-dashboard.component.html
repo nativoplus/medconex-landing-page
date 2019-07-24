@@ -19,7 +19,7 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right" id="top-menu">
               <li><a routerLink="/" routerLinkActive="active">Home</a></li>
-              <li class="active"><a routerLink="/admin-dashboard" routerLinkActive="active">Admin Dashboard</a></li>
+              <li class="active"><a routerLink="/admin-dashboard" routerLinkActive="active">Admin dashboard</a></li>
               <li><a href="#" onclick="return false;" (click)="logOut()">Log out</a></li>
             </ul>
           </div>
@@ -31,15 +31,65 @@
 </header>
 
 <div class="main-content">
-  <section class="iq-coming overview-block-ptb text-center">
+  <!--<section class="iq-coming overview-block-ptb text-center">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
           <img class="img-responsive center-block iq-mb-10 wow zoomIn" id="logo_img" data-wow-duration="1s" src="assets/images/medconex-logo.png" alt="" style="height: 300px; width: 300px; visibility: visible; animation-duration: 1s; animation-name: zoomIn;">
           <div class="big-text iq-tw-7 iq-mt-10">Admin Page</div>
-          <div class="big-text iq-tw-7 iq-mt-60">Coming Soon</div>
+          <div class="big-text iq-tw-7 iq-mt-60">In Progress</div>
           <h5 class="iq-font-light iq-tw-6 iq-mt-40">Sit still. We are working on it as we speak!</h5>
+          <kendo-grid [data]="activeUsers"></kendo-grid>
         </div>
+      </div>
+    </div>
+  </section>-->
+  <section class="overview-block-ptb white-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="heading-title">            
+            <h2 class="title iq-tw-6">Analytics</h2>
+            <div class="divider"></div>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-offset-2 col-sm-6 col-md-3">
+          <div class="iq-fancy-box-02 text-center">
+            <div class="iq-icon">
+              <i aria-hidden="true" class="ion-ios-people-outline"></i>
+            </div>
+            <div class="fancy-content">
+              <h5 class="iq-tw-6 iq-pt-20 iq-pb-10">Total Active Users</h5>
+              <h5 class="iq-tw-5">{{activeUsers.length}}</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 re7-mt-50">
+          <div class="iq-fancy-box-02 text-center">
+            <div class="iq-icon">
+              <i aria-hidden="true" class="ion-ios-person-outline"></i>
+            </div>
+            <div class="fancy-content">
+              <h5 class="iq-tw-6 iq-pt-20 iq-pb-10">Active Users</h5>
+              <kendo-grid id="activeUsersGrid" [data]="activeUsers"></kendo-grid>
+            </div>
+          </div>
+        </div>
+        <!--<div class="col-sm-6 col-md-4 re-mt-30">
+          <div class="iq-fancy-box-02 text-center">
+            <div class="iq-icon">
+              <i aria-hidden="true" class="ion-ios-heart-outline"></i>
+            </div>
+            <div class="fancy-content">
+              <h5 class="iq-tw-6 iq-pt-20 iq-pb-10">More than just a medication management app</h5>
+              <p>It's a designed space were we can uplift, stay in the loop, help each other through a difficult time, and having something that’s lasting.</p>
+            </div>
+          </div>
+        </div>-->
+
       </div>
     </div>
   </section>

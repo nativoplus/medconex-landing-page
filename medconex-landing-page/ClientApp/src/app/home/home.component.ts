@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
 
   onContactUsFormSubmit() {
 
-    if( !this.contactUsForm.valid && !this.contactUsForm.controls.myRecaptcha.value) {
+    if(!this.contactUsForm.valid && !this.contactUsForm.controls.myRecaptcha.value) {
       return;
     } else {
 
@@ -97,7 +97,7 @@ export class HomeComponent implements OnInit {
   }
 
   onScriptError() {
-    console.log('Something went long when loading the Google reCAPTCHA');
+    console.log('Something went wrong when loading the Google reCAPTCHA');
   }
 
 }

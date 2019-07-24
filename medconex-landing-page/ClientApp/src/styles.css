@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.k-grid .k-header {
+  display: none;
+}
+#activeUsersGrid .k-grid-header {
+  padding: 0 !important;
+}
+
+#activeUsersGrid .k-grid-content {
+  overflow-y: visible;
+}
