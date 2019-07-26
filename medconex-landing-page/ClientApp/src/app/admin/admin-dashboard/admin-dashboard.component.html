@@ -56,8 +56,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-offset-2 col-sm-6 col-md-3">
-          <div class="iq-fancy-box-02 text-center">
+        <div [ngClass]="!showGrid ? 'col-sm-offset-4 col-sm-4' : 'col-sm-3'">
+          <div class="iq-fancy-box-02 text-center cursor-pointer" (click)="showGrid = !showGrid">
             <div class="iq-icon">
               <i aria-hidden="true" class="ion-ios-people-outline"></i>
             </div>
@@ -67,14 +67,48 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-6 re7-mt-50">
+        <div class="col-sm-9 re7-mt-50" *ngIf="showGrid">
           <div class="iq-fancy-box-02 text-center">
             <div class="iq-icon">
               <i aria-hidden="true" class="ion-ios-person-outline"></i>
             </div>
             <div class="fancy-content">
               <h5 class="iq-tw-6 iq-pt-20 iq-pb-10">Active Users</h5>
-              <kendo-grid id="activeUsersGrid" [data]="activeUsers"></kendo-grid>
+              <kendo-grid id="activeUsersGrid"
+                          [data]="gridView"
+                          [pageSize]="pageSize"
+                          [skip]="skip"
+                          (pageChange)="pageChange($event)"
+                          [pageable]="{
+                            buttonCount: 3,
+                            pageSizes: false
+                          }"                          
+                          [sort]="sort"
+                          (sortChange)="sortChange($event)"
+                          [sortable]="{
+                            allowUnsort: true,
+                            mode: 'single'
+                          }">
+                <kendo-grid-column [field]="'username'"
+                                   [filter]="'text'"
+                                   [title]="'Username'">
+                </kendo-grid-column>
+                <kendo-grid-column [field]="'firstName'"
+                                   [filter]="'text'"
+                                   [title]="'First name'">
+                </kendo-grid-column>
+                <kendo-grid-column [field]="'lastName'"
+                                   [filter]="'text'"
+                                   [title]="'Last name'">
+                </kendo-grid-column>
+                <kendo-grid-column [field]="'paidSubscriber'"
+                                   [filter]="'boolean'"
+                                   [title]="'Paid subscriber'">
+                  <ng-template kendoGridCellTemplate let-dataItem>
+                    {{dataItem.paidSubscriber ? "Yes" : "No"}}
+                  </ng-template>
+                </kendo-grid-column>
+              </kendo-grid>
             </div>
           </div>
         </div>

@@ -9,6 +9,9 @@ exports.GetActiveUsersResponse = GetActiveUsersResponse;
 var ActiveUsersModel = /** @class */ (function () {
     function ActiveUsersModel() {
         this.username = '';
+        this.firstName = '';
+        this.lastName = '';
+        this.paidSubscriber = false;
     }
     return ActiveUsersModel;
 }());

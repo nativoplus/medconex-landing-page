@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   SGWidgetDataTokenForSubscription: '386861fc73d055b997659cec39eb43d2',
   contactUsSendgridTemplateId : 'd-bfa29044f7754659a2dbd5d6e3877819',
-  reCaptchaKey: '6LdawKcUAAAAAGHQ43OqZ92sWbJcsa34c7TeZD9K',
+  reCaptchaKey: '6LcXIa8UAAAAAM8MRf7dtgNz-oLIWEMpS8oHHmB8',
   adminRoleId: 'b7e0849f-d2d5-483d-85cd-d33a7d9d018d',
   kinveyAppKey: 'kid_ryZl8bRDm',
   kinveyAppSecret: '1c6e98663ec6493ab8cdd06e09b27714',

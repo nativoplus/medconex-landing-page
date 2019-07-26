@@ -4,4 +4,7 @@ export class GetActiveUsersResponse {
 
 export class ActiveUsersModel {
   username: string = '';
+  firstName: string = '';
+  lastName: string = '';
+  paidSubscriber: boolean = false;
 }
