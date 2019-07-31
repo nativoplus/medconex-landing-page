@@ -5,7 +5,6 @@ import { UserService } from 'kinvey-angular-sdk';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { KinveyRoleMember } from '../models/KinveyRoleMember';
-import { GetActiveUsersResponse } from '../models/GetActiveUsersResponse';
 
 @Injectable()
 export class AuthService {
@@ -40,14 +39,6 @@ export class AuthService {
       ).toPromise();
   }
 
-  getActiveUsers() {
-    return this._http.get<GetActiveUsersResponse>(environment.api.getActiveUsersApi)
-      .pipe(
-        retry(2),
-        catchError(this.handleError)
-      ).toPromise();
-  }
-
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -62,5 +53,5 @@ export class AuthService {
     // return an observable with a user-facing error message
     return throwError(
       'Something bad happened; please try again later.');
-  };
+  }
 }

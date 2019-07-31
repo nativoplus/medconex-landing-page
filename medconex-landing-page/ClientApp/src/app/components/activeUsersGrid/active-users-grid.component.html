@@ -1,0 +1,31 @@
+<kendo-grid id="activeUsersGrid"
+            [data]="gridData"
+            [pageSize]="pageSize"
+            [skip]="skip"
+            (pageChange)="pageChange($event)"
+            [pageable]="{
+              buttonCount: 3,
+              pageSizes: false
+            }"
+            [sort]="sort"
+            (sortChange)="sortChange($event)"
+            [sortable]="{
+              allowUnsort: true,
+              mode: 'single'
+            }">
+  <kendo-grid-column [field]="'username'"
+                     [title]="'Username'">
+  </kendo-grid-column>
+  <kendo-grid-column [field]="'firstName'"
+                     [title]="'First name'">
+  </kendo-grid-column>
+  <kendo-grid-column [field]="'lastName'"
+                     [title]="'Last name'">
+  </kendo-grid-column>
+  <kendo-grid-column [field]="'paidSubscriber'"
+                     [title]="'Paid subscriber'">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      {{dataItem.paidSubscriber ? "Yes" : "No"}}
+    </ng-template>
+  </kendo-grid-column>
+</kendo-grid>

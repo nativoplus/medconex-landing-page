@@ -31,19 +31,6 @@
 </header>
 
 <div class="main-content">
-  <!--<section class="iq-coming overview-block-ptb text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <img class="img-responsive center-block iq-mb-10 wow zoomIn" id="logo_img" data-wow-duration="1s" src="assets/images/medconex-logo.png" alt="" style="height: 300px; width: 300px; visibility: visible; animation-duration: 1s; animation-name: zoomIn;">
-          <div class="big-text iq-tw-7 iq-mt-10">Admin Page</div>
-          <div class="big-text iq-tw-7 iq-mt-60">In Progress</div>
-          <h5 class="iq-font-light iq-tw-6 iq-mt-40">Sit still. We are working on it as we speak!</h5>
-          <kendo-grid [data]="activeUsers"></kendo-grid>
-        </div>
-      </div>
-    </div>
-  </section>-->
   <section class="overview-block-ptb white-bg">
     <div class="container">
       <div class="row">
@@ -57,7 +44,7 @@
       </div>
       <div class="row">
         <div [ngClass]="!showGrid ? 'col-sm-offset-4 col-sm-4' : 'col-sm-3'">
-          <div class="iq-fancy-box-02 text-center cursor-pointer" (click)="showGrid = !showGrid">
+          <div class="iq-fancy-box-02 text-center cursor-pointer" (click)="showGrid = !showGrid; getActiveUsers()">
             <div class="iq-icon">
               <i aria-hidden="true" class="ion-ios-people-outline"></i>
             </div>
@@ -74,56 +61,23 @@
             </div>
             <div class="fancy-content">
               <h5 class="iq-tw-6 iq-pt-20 iq-pb-10">Active Users</h5>
-              <kendo-grid id="activeUsersGrid"
-                          [data]="gridView"
-                          [pageSize]="pageSize"
-                          [skip]="skip"
-                          (pageChange)="pageChange($event)"
-                          [pageable]="{
-                            buttonCount: 3,
-                            pageSizes: false
-                          }"                          
-                          [sort]="sort"
-                          (sortChange)="sortChange($event)"
-                          [sortable]="{
-                            allowUnsort: true,
-                            mode: 'single'
-                          }">
-                <kendo-grid-column [field]="'username'"
-                                   [filter]="'text'"
-                                   [title]="'Username'">
-                </kendo-grid-column>
-                <kendo-grid-column [field]="'firstName'"
-                                   [filter]="'text'"
-                                   [title]="'First name'">
-                </kendo-grid-column>
-                <kendo-grid-column [field]="'lastName'"
-                                   [filter]="'text'"
-                                   [title]="'Last name'">
-                </kendo-grid-column>
-                <kendo-grid-column [field]="'paidSubscriber'"
-                                   [filter]="'boolean'"
-                                   [title]="'Paid subscriber'">
-                  <ng-template kendoGridCellTemplate let-dataItem>
-                    {{dataItem.paidSubscriber ? "Yes" : "No"}}
-                  </ng-template>
-                </kendo-grid-column>
-              </kendo-grid>
+              <active-users-grid></active-users-grid>
             </div>
           </div>
         </div>
-        <!--<div class="col-sm-6 col-md-4 re-mt-30">
+      </div>
+      <div class="row">
+        <div class="re7-mt-50 iq-mt-50" [ngClass]="!showGrid ? 'col-sm-offset-1 col-sm-10' : 'col-sm-offset-3 col-sm-9'">
           <div class="iq-fancy-box-02 text-center">
             <div class="iq-icon">
-              <i aria-hidden="true" class="ion-ios-heart-outline"></i>
+              <i aria-hidden="true" class="ion-ios-medkit-outline"></i>
             </div>
             <div class="fancy-content">
-              <h5 class="iq-tw-6 iq-pt-20 iq-pb-10">More than just a medication management app</h5>
-              <p>It's a designed space were we can uplift, stay in the loop, help each other through a difficult time, and having something that’s lasting.</p>
+              <h5 class="iq-tw-6 iq-pt-20 iq-pb-10">Medication Adherence</h5>
+              <medications-grid></medications-grid>
             </div>
           </div>
-        </div>-->
-
+        </div>
       </div>
     </div>
   </section>

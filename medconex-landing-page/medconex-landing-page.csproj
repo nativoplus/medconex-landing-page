@@ -25,10 +25,14 @@
     <None Remove="ClientApp\src\app\admin\admin-dashboard\admin-dashboard.component.ts" />
     <None Remove="ClientApp\src\app\admin\admin-routing.module.ts" />
     <None Remove="ClientApp\src\app\admin\admin.module.ts" />
+    <None Remove="ClientApp\src\app\components\activeUsersGrid\active-users-grid.component.ts" />
+    <None Remove="ClientApp\src\app\components\medicationsGrid\medications-grid.component.ts" />
+    <None Remove="ClientApp\src\app\components\models\GetActiveUsersResponse.ts" />
+    <None Remove="ClientApp\src\app\components\models\GetMedicationsResponse.ts" />
+    <None Remove="ClientApp\src\app\components\services\analytics.service.ts" />
     <None Remove="ClientApp\src\app\login\login-page\login-page.component.ts" />
     <None Remove="ClientApp\src\app\login\login-routing.module.ts" />
     <None Remove="ClientApp\src\app\login\login.module.ts" />
-    <None Remove="ClientApp\src\app\login\models\GetActiveUsersResponse.ts" />
     <None Remove="ClientApp\src\app\login\models\KinveyRoleMember.ts" />
     <None Remove="ClientApp\src\app\login\services\auth-guard.service.ts" />
     <None Remove="ClientApp\src\app\login\services\auth.service.ts" />
@@ -54,6 +58,11 @@
     <TypeScriptCompile Include="ClientApp\src\app\admin\admin.module.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\components\activeUsersGrid\active-users-grid.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\components\medicationsGrid\medications-grid.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\components\models\GetActiveUsersResponse.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\components\models\GetMedicationsResponse.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\components\services\analytics.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\login\login-page\login-page.component.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -63,7 +72,6 @@
     <TypeScriptCompile Include="ClientApp\src\app\login\login.module.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\src\app\login\models\GetActiveUsersResponse.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\login\models\KinveyRoleMember.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

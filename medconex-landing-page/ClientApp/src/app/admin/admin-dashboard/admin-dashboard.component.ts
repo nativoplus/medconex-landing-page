@@ -3,57 +3,28 @@ import { AuthService } from '../../login/services/auth.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { User } from 'kinvey-js-sdk';
-import { ActiveUsersModel, GetActiveUsersResponse } from 'src/app/login/models/GetActiveUsersResponse';
-import { GridDataResult, PageChangeEvent } from '@progress/kendo-angular-grid';
-import { SortDescriptor, orderBy } from '@progress/kendo-data-query';
+import { ActiveUserModel, GetActiveUsersResponse } from '../../components/models/GetActiveUsersResponse';
+import { AnalyticsService } from '../../components/services/analytics.service';
 
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html'
 })
 export class AdminDashboardComponent implements OnInit {
-  public activeUsers: ActiveUsersModel[] = [];
+  public activeUsers: ActiveUserModel[] = [];
   public showGrid: boolean = false;
 
-  public gridView: GridDataResult;
-  public pageSize: number = 5;
-  public skip: number = 0;
-
-  public sort: SortDescriptor[] = [{
-    field: 'username',
-    dir: 'asc'
-  }];
-
-  constructor(private _authService: AuthService, private _router: Router) {
+  constructor(private _authService: AuthService, private _analyticsService: AnalyticsService, private _router: Router) {
   }
 
   ngOnInit() {
     this.getActiveUsers();
   }
 
-  loadActiveUsers() {
-    this.gridView = {
-      data: orderBy(this.activeUsers.slice(this.skip, this.skip + this.pageSize), this.sort),
-      total: this.activeUsers.length
-    };
-  }
-
-  pageChange({ skip, take }: PageChangeEvent): void {
-    this.skip = skip;
-    this.pageSize = take;
-    this.loadActiveUsers();
-  }
-
-  sortChange(sort: SortDescriptor[]): void {
-    this.sort = sort;
-    this.loadActiveUsers();
-  }
-
   getActiveUsers() {
-    this._authService.getActiveUsers().then((users: GetActiveUsersResponse) => {
+    this._analyticsService.getActiveUsers().then((users: GetActiveUsersResponse) => {
       if (users.activeUsers) {
         this.activeUsers = users.activeUsers;
-        this.loadActiveUsers();
       }
     }).catch((error) => {
       Swal.fire({

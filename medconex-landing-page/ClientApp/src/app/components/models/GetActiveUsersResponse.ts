@@ -1,8 +1,8 @@
 export class GetActiveUsersResponse {
-  activeUsers: ActiveUsersModel[];
+  activeUsers: ActiveUserModel[];
 }
 
-export class ActiveUsersModel {
+export class ActiveUserModel {
   username: string = '';
   firstName: string = '';
   lastName: string = '';

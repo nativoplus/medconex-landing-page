@@ -14,6 +14,7 @@ import { environment } from 'src/environments/environment';
 import { AuthGuard } from './login/services/auth-guard.service';
 import { AuthService } from './login/services/auth.service';
 import { LoginModule } from './login/login.module';
+import { AnalyticsService } from './components/services/analytics.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { LoginModule } from './login/login.module';
   ],
   providers: [
     AuthGuard,
-    AuthService
+    AuthService,
+    AnalyticsService
   ],
   bootstrap: [AppComponent]
 })

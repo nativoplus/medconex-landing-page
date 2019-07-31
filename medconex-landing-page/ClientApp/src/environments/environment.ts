@@ -14,7 +14,8 @@ export const environment = {
   api: {
     contactUsApi: 'https://nativoplusemailapi.azurewebsites.net/api/v1.0/Email/send_email_template',
     kinveyAdminMembersApi: 'https://baas.kinvey.com/roles/kid_ryZl8bRDm/b7e0849f-d2d5-483d-85cd-d33a7d9d018d/membership',
-    getActiveUsersApi: 'https://mobilehmmapi.azurewebsites.net/api/v1.0/users/getactiveusers'
+    getActiveUsersApi: 'https://mobilehmmapi.azurewebsites.net/api/v1.0/users/getactiveusers',
+    getMedicationsApi: 'https://mobilehmmapi.azurewebsites.net/api/v1.0/medications/getmedicationsadherence'
   },
   contactUs: {
     senderEmail: 'angelmartinez.la@gmail.com',

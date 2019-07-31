@@ -6,14 +6,14 @@ var GetActiveUsersResponse = /** @class */ (function () {
     return GetActiveUsersResponse;
 }());
 exports.GetActiveUsersResponse = GetActiveUsersResponse;
-var ActiveUsersModel = /** @class */ (function () {
-    function ActiveUsersModel() {
+var ActiveUserModel = /** @class */ (function () {
+    function ActiveUserModel() {
         this.username = '';
         this.firstName = '';
         this.lastName = '';
         this.paidSubscriber = false;
     }
-    return ActiveUsersModel;
+    return ActiveUserModel;
 }());
-exports.ActiveUsersModel = ActiveUsersModel;
+exports.ActiveUserModel = ActiveUserModel;
 //# sourceMappingURL=GetActiveUsersResponse.js.map

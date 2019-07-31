@@ -1,0 +1,28 @@
+<kendo-grid id="activeUsersGrid"
+            [data]="gridData"
+            [pageSize]="pageSize"
+            [skip]="skip"
+            (pageChange)="pageChange($event)"
+            [pageable]="{
+              buttonCount: 3,
+              pageSizes: false
+            }"
+            [sort]="sort"
+            (sortChange)="sortChange($event)"
+            [sortable]="{
+              allowUnsort: true,
+              mode: 'single'
+            }">
+  <kendo-grid-column [field]="'medicationName'"
+                     [title]="'Medication'">
+  </kendo-grid-column>
+  <kendo-grid-column [field]="'totalTaken'"
+                     [title]="'Taken'">
+  </kendo-grid-column>
+  <kendo-grid-column [field]="'totalMissed'"
+                     [title]="'Missed'">
+  </kendo-grid-column>
+  <kendo-grid-column [field]="'adherencePercentage'"
+                     [title]="'Adherence Percentage'">
+  </kendo-grid-column>
+</kendo-grid>

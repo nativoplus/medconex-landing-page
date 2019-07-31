@@ -5,6 +5,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminRoutingModule } from './admin-routing.module';
 import { CommonModule } from '@angular/common';
 import { GridModule } from '@progress/kendo-angular-grid';
+import { ActiveUsersGridComponent } from '../components/activeUsersGrid/active-users-grid.component';
+import { MedicationsGridComponent } from '../components/medicationsGrid/medications-grid.component';
 
 @NgModule({
   imports: [
@@ -13,7 +15,9 @@ import { GridModule } from '@progress/kendo-angular-grid';
     GridModule
   ],
   declarations: [
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    ActiveUsersGridComponent,
+    MedicationsGridComponent
   ]
 })
 export class AdminModule { }
