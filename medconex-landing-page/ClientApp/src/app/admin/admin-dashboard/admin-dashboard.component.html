@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="row">
-        <div [ngClass]="!showGrid ? 'col-sm-offset-4 col-sm-4' : 'col-sm-3'">
+        <div [ngClass]="!showGrid ? 'col-md-offset-4 col-md-4' : 'col-md-3'">
           <div class="iq-fancy-box-02 text-center cursor-pointer" (click)="showGrid = !showGrid; getActiveUsers()">
             <div class="iq-icon">
               <i aria-hidden="true" class="ion-ios-people-outline"></i>
@@ -54,7 +54,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-9 re7-mt-50" *ngIf="showGrid">
+        <div class="col-md-9 re9-mt-50" *ngIf="showGrid">
           <div class="iq-fancy-box-02 text-center">
             <div class="iq-icon">
               <i aria-hidden="true" class="ion-ios-person-outline"></i>
@@ -67,7 +67,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="re7-mt-50 iq-mt-50" [ngClass]="!showGrid ? 'col-sm-offset-1 col-sm-10' : 'col-sm-offset-3 col-sm-9'">
+        <div class="re9-mt-50 iq-mt-50" [ngClass]="!showGrid ? 'col-md-offset-1 col-md-10' : 'col-md-offset-3 col-md-9'">
           <div class="iq-fancy-box-02 text-center">
             <div class="iq-icon">
               <i aria-hidden="true" class="ion-ios-medkit-outline"></i>
@@ -81,10 +81,4 @@
       </div>
     </div>
   </section>
-</div>
-
-<!-- back-to-top -->
-
-<div id="back-to-top">
-  <a class="top" id="top" href="/admin-dashboard#top"> <i class="ion-ios-upload-outline"></i> </a>
 </div>

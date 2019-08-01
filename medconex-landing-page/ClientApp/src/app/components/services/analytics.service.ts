@@ -12,9 +12,9 @@ export class AnalyticsService {
 
   }
 
-  getMedications(patientId: number) {
+  getMedications(userId: number) {
     let params = new HttpParams();
-    params = params.append('patientId', patientId.toString());
+    params = params.append('userId', userId.toString());
 
     return this._http.get<GetMedicationsResponse>(environment.api.getMedicationsApi, { params: params })
       .pipe(

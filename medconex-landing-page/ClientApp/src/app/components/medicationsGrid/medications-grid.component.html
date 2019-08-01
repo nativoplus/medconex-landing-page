@@ -1,20 +1,21 @@
 <kendo-grid id="activeUsersGrid"
-            [data]="gridData"
-            [pageSize]="pageSize"
-            [skip]="skip"
-            (pageChange)="pageChange($event)"
+            [data]="gridView"
+            [pageSize]="state.take"
+            [skip]="state.skip"
             [pageable]="{
               buttonCount: 3,
               pageSizes: false
             }"
-            [sort]="sort"
-            (sortChange)="sortChange($event)"
+            [sort]="state.sort"
             [sortable]="{
               allowUnsort: true,
               mode: 'single'
-            }">
-  <kendo-grid-column [field]="'medicationName'"
-                     [title]="'Medication'">
+            }"
+            [group]="state.group"
+            [groupable]="true"
+            (dataStateChange)="dataStateChange($event)">
+  <kendo-grid-column [field]="'userFullName'"
+                     [title]="'User'">
   </kendo-grid-column>
   <kendo-grid-column [field]="'totalTaken'"
                      [title]="'Taken'">
@@ -23,6 +24,16 @@
                      [title]="'Missed'">
   </kendo-grid-column>
   <kendo-grid-column [field]="'adherencePercentage'"
-                     [title]="'Adherence Percentage'">
+                     [title]="'(Taken/Total) x 100'">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      {{dataItem.adherencePercentage}}%
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-column [field]="'medicationName'"
+                     [title]="'Medication'"
+                     [hidden]="true">
+    <ng-template kendoGridGroupHeaderTemplate let-value="value" let-aggregates="aggregates">
+      {{value}} (Users: {{aggregates["userFullName"].count}})
+    </ng-template>
   </kendo-grid-column>
 </kendo-grid>

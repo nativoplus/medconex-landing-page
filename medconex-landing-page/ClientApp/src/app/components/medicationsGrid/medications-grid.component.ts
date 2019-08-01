@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MedicationModel, GetMedicationsResponse } from "../models/GetMedicationsResponse";
-import { GridDataResult, PageChangeEvent } from "@progress/kendo-angular-grid";
-import { SortDescriptor, orderBy } from "@progress/kendo-data-query";
+import { DataStateChangeEvent } from "@progress/kendo-angular-grid";
+import { SortDescriptor, State, AggregateDescriptor, GroupDescriptor, DataResult, process } from "@progress/kendo-data-query";
 import { AnalyticsService } from "../services/analytics.service";
 import Swal from "sweetalert2";
 
@@ -12,14 +12,21 @@ import Swal from "sweetalert2";
 export class MedicationsGridComponent implements OnInit {
   public medications: MedicationModel[] = [];
 
-  public gridData: GridDataResult;
-  public pageSize: number = 5;
-  public skip: number = 0;
-
   public sort: SortDescriptor[] = [{
-    field: 'medicationName',
+    field: 'userFullName',
     dir: 'asc'
   }];
+
+  public gridView: DataResult;
+  public aggregates: AggregateDescriptor[] = [{ field: 'userFullName', aggregate: 'count' }];
+  public groups: GroupDescriptor[] = [{ field: 'medicationName', aggregates: this.aggregates }];
+
+  public state: State = {
+    skip: 0,
+    take: 5,
+    sort: this.sort,
+    group: this.groups
+  };
 
   constructor(private _analyticsService: AnalyticsService) {
 
@@ -30,20 +37,14 @@ export class MedicationsGridComponent implements OnInit {
   }
 
   loadMedications() {
-    this.gridData = {
-      data: orderBy(this.medications.slice(this.skip, this.skip + this.pageSize), this.sort),
-      total: this.medications.length
-    };
+    this.gridView = process(this.medications, this.state);
   }
 
-  pageChange({ skip, take }: PageChangeEvent): void {
-    this.skip = skip;
-    this.pageSize = take;
-    this.loadMedications();
-  }
-
-  sortChange(sort: SortDescriptor[]): void {
-    this.sort = sort;
+  dataStateChange(state: DataStateChangeEvent): void {
+    if (state && state.group) {
+      state.group.map(group => group.aggregates = this.aggregates);
+    }
+    this.state = state;
     this.loadMedications();
   }
 

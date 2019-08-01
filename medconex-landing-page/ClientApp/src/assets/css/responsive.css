@@ -47,6 +47,7 @@ NOTE: This file contains the styling for responsive Template.
 	header .navbar-nav > li { margin: 0 20px 0 0; }
 	header.affix .navbar-header .navbar-brand img { height: 48px; }
 	.re-mt-30 { margin-top: 40px; }
+  .re9-mt-50 { margin-top: 50px; }
 	header.affix .navbar-nav { margin-top: 0px; }
 	.banner-text .link li a { font-size: 28px; }
 	.banner-text .link h5 { margin-bottom: 15px; font-size: 18px; }

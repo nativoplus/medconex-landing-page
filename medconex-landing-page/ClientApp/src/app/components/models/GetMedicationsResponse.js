@@ -10,6 +10,8 @@ var MedicationModel = /** @class */ (function () {
     function MedicationModel() {
         this.medicationId = 0;
         this.medicationName = '';
+        this.userId = 0;
+        this.userFullName = '';
         this.totalTaken = 0;
         this.totalMissed = 0;
         this.adherencePercentage = 0;
